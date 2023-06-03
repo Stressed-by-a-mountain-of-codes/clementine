@@ -1,38 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Chatbot Song Recommender</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Spotify-like Webpage</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <nav>
       <div class="container">
         <div class="logo">
-          <img src="{{ url_for('static', filename='images/spotify-logo.png') }}" alt="Spotify Logo">
+          <img src="spotify-logo.png" alt="Spotify Logo">
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Browse</a></li>
+          <li><a href="#">Radio</a></li>
+          <li><a href="#">Your Library</a></li>
+        </ul>
+        <div class="search">
+          <input type="text" placeholder="Search">
+          <button type="submit">Search</button>
         </div>
       </div>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Discover Your Perfect Songs</h1>
-      <p>Enter your mood and let our chatbot recommend songs for you.</p>
-      <form action="/recommend" method="POST">
-        <input type="text" name="query" placeholder="Enter your mood">
-        <button type="submit">Get Recommendations</button>
-      </form>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Discover New Music</h1>
+        <p>Find your favorite songs and artists.</p>
+        <form>
+          <input type="text" placeholder="Search">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="playlists">
+      <div class="container">
+        <h2>Featured Playlists</h2>
+        <div class="playlist">
+          <!-- Playlist items go here -->
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2023 Chatbot Song Recommender</p>
+      <p>&copy; 2023 My Spotify-like Webpage. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="script.js"></script>
 </body>
 </html>
