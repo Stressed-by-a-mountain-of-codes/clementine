@@ -6,29 +6,29 @@ menuIcon.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Add shine effect on hover
-const menuItems = document.querySelectorAll('.nav-links li');
+// Dark Mode and Light Mode Toggle
+const toggleButton = document.querySelector('.toggle-button');
+const body = document.querySelector('body');
 
-menuItems.forEach((item) => {
-  item.addEventListener('mouseover', () => {
-    item.classList.add('shine');
-  });
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+});
 
-  item.addEventListener('mouseout', () => {
-    item.classList.remove('shine');
-  });
+// Chatbox
+const chatForm = document.querySelector('.chat-form');
+const chatInput = document.querySelector('.chat-form input[type="text"]');
+const chatMessages = document.querySelector('.chat-messages');
 
-  item.addEventListener('click', (event) => {
-    const target = event.target.getAttribute('data-target');
-    if (target) {
-      const section = document.getElementById(target);
-      if (section) {
-        // Scroll to the section smoothly
-        section.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        // Redirect to the target page
-        window.location.href = target;
-      }
-    }
-  });
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const message = chatInput.value.trim();
+
+  if (message !== '') {
+    const chatMessage = document.createElement('div');
+    chatMessage.classList.add('message');
+    chatMessage.textContent = message;
+    chatMessages.appendChild(chatMessage);
+    chatInput.value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
 });
