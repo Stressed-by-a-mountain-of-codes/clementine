@@ -3,8 +3,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0f0f0f;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 .container {
@@ -15,8 +15,9 @@ body {
 
 /* Header Styles */
 header {
-  background-color: #000;
-  padding: 10px 0;
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -41,7 +42,7 @@ nav {
 }
 
 .nav-links li a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
@@ -49,60 +50,7 @@ nav {
 }
 
 .nav-links li a:hover {
-  color: #1db954;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 5px 0;
-  transition: background-color 0.3s;
-}
-
-.menu-toggle.open .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-toggle.open .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-.search {
-  display: flex;
-  align-items: center;
-}
-
-.search input[type="text"] {
-  padding: 10px;
-  font-size: 14px;
-  width: 200px;
-  border: none;
-  border-radius: 20px 0 0 20px;
-}
-
-.search button[type="submit"] {
-  padding: 10px 20px;
-  background-color: #1db954;
-  color: #fff;
-  border: none;
-  border-radius: 0 20px 20px 0;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.search button[type="submit"]:hover {
-  background-color: #1ed760;
+  color: #1a73e8;
 }
 
 /* Hero Section Styles */
@@ -122,24 +70,71 @@ nav {
   margin-bottom: 30px;
 }
 
-.hero form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+.hero .cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1a73e8;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.hero input[type="text"] {
+.hero .cta-button:hover {
+  background-color: #4285f4;
+}
+
+/* Chat Section Styles */
+.chat-section {
+  background-color: #fff;
+  padding: 100px 0;
+}
+
+.chat-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chat-history {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.sender {
+  font-weight: bold;
+}
+
+.content {
+  margin-top: 5px;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-input input[type="text"] {
   padding: 10px;
   font-size: 16px;
-  width: 300px;
+  width: 80%;
   border: none;
   border-radius: 20px 0 0 20px;
 }
 
-.hero button[type="submit"] {
+.chat-input button[type="submit"] {
   padding: 10px 20px;
-  background-color: #1db954;
+  background-color: #1a73e8;
   color: #fff;
   border: none;
   border-radius: 0 20px 20px 0;
@@ -149,70 +144,8 @@ nav {
   transition: background-color 0.3s;
 }
 
-.hero button[type="submit"]:hover {
-  background-color: #1ed760;
-}
-
-/* Playlist Section Styles */
-.playlists {
-  padding: 50px 0;
-  text-align: center;
-}
-
-.playlists h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.playlist {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.song {
-  display: flex;
-  align-items: center;
-  width: calc(33.33% - 20px);
-  padding: 20px;
-  background-color: #181818;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.song-info {
-  flex-grow: 1;
-}
-
-.song-title {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.artist {
-  font-size: 14px;
-}
-
-.song-action {
-  display: flex;
-  align-items: center;
-}
-
-.play-button {
-  padding: 10px 20px;
-  background-color: #1db954;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.play-button:hover {
-  background-color: #1ed760;
+.chat-input button[type="submit"]:hover {
+  background-color: #4285f4;
 }
 
 /* Footer Styles */
@@ -227,67 +160,7 @@ footer p {
   margin: 0;
 }
 
-/* Chatbox Section Styles */
-.chatbox {
-  background-image: url('spotify-background.jpg');
-  background-size: cover;
-  padding: 100px 0;
-  text-align: center;
-}
-
-.chat-history {
-  float: left;
-  width: 20%;
-  max-height: 400px;
-  overflow-y: scroll;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-.chat-messages {
-  float: right;
-  width: 75%;
-  max-height: 400px;
-  overflow-y: scroll;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.chat-form {
-  clear: both;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.chat-form input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  width: 80%;
-  border: none;
-  border-radius: 20px 0 0 20px;
-}
-
-.chat-form button[type="submit"] {
-  padding: 10px 20px;
-  background-color: #1db954;
-  color: #fff;
-  border: none;
-  border-radius: 0 20px 20px 0;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.chat-form button[type="submit"]:hover {
-  background-color: #1ed760;
-}
-
+/* Theme Toggle Styles */
 .theme-toggle {
   position: fixed;
   bottom: 20px;
@@ -307,5 +180,58 @@ footer p {
 }
 
 .theme-toggle:hover {
-  background-color: #1db954;
+  background-color: #1a73e8;
+}
+
+/* Chat Bubble Styles */
+.message {
+  display: inline-block;
+  background-color: #1a73e8;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.message.sender {
+  background-color: #f8f8f8;
+  color: #000;
+}
+
+/* Thumb Icon Styles */
+.like-icon {
+  color: #388e3c;
+}
+
+.hate-icon {
+  color: #d32f2f;
+}
+
+/* Loading Animation Styles */
+.loading-animation {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.loading-animation::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #1a73e8;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+   100% {
+    transform: rotate(360deg);
+  }
 }
